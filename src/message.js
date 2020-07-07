@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-function Message(){
+function Message(props){
   return <div className="msg">
     <div className="msg-bubble">
-      hello this is a message
+      {props.text}
     </div>
   </div>
 }
