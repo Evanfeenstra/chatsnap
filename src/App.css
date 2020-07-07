@@ -70,7 +70,18 @@ header img {
     justify-content:center;
 }
 
-
+.msg{
+  width:100%;
+}
+.msg-bubble{
+  color:white;
+  background: black;
+  border-radius:6px;
+  border:1px solid grey;
+  padding:4px 10px;
+  display: inline-block;
+  margin:5px;
+}
 
 
 
