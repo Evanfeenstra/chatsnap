@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import Footer from './footer'
 import Message from './message'
 import {initialize, useDatu} from 'datu'
+import {BrowserRouter, Route} from 'react-router-dom'
 
 function App() {
-  const {messages, send} = useDatu()
-  console.log(messages)
+  useEffect(()=>{
+    const path = window.location.pathname
+    if(path.length<2) window.location.pathname='/home'
+  }, [])
+  return <BrowserRouter>
+    <Route path="/:room" component={Room} />
+  </BrowserRouter>
+}
+
+function Room(props) {
+  const room = props.match.params.room
+  const {messages, send} = useDatu(room)
   return (
     <main className="main">
   
@@ -22,7 +33,7 @@ function App() {
       </div>
 
       <Footer
-        onSend={text=> send({text:text})} 
+        onSend={text=> send({text, room})} 
       />
 
     </main>
