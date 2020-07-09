@@ -43,12 +43,12 @@ function Room(props) {
 export default App;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDWXVgUqm3xATyzqUqTxcpvsW7U804ctXI",
-  authDomain: "chatter20202020.firebaseapp.com",
-  databaseURL: "https://chatter20202020.firebaseio.com",
-  projectId: "chatter20202020",
-  storageBucket: "chatter20202020.appspot.com",
-  messagingSenderId: "630230183323",
-  appId: "1:630230183323:web:cc967f51fc79e394ca053e"
+  apiKey: "AIzaSyCM4MfokXnlCxEQcp96BcXk16-6Y5bTsfk",
+  authDomain: "chatsnapppp.firebaseapp.com",
+  databaseURL: "https://chatsnapppp.firebaseio.com",
+  projectId: "chatsnapppp",
+  storageBucket: "chatsnapppp.appspot.com",
+  messagingSenderId: "324225124799",
+  appId: "1:324225124799:web:21a0ca271a8efdf09e390a"
 };
 initialize(firebaseConfig)
