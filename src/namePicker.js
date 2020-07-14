@@ -1,9 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {FiEdit,FiSave} from 'react-icons/fi'
 
 function NamePicker(props){
   const [name,setName] = useState('')
   const [editing,setEditing] = useState(false)
+
+  useEffect(()=>{
+    const storedName = localStorage.getItem('name')
+    if(storedName) {
+      setName(storedName)
+      props.saveName(storedName)
+    }
+  }, [])
+
   return <div className="name-picker">
 
     {editing && <>
@@ -14,6 +23,7 @@ function NamePicker(props){
         onClick={()=> {
           setEditing(!editing)
           props.saveName(name)
+          localStorage.setItem('name',name)
         }}
       />
     </>}
