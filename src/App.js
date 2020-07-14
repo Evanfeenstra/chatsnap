@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Footer from './footer'
 import Message from './message'
 import {initialize, useDatu} from 'datu'
 import {BrowserRouter, Route} from 'react-router-dom'
+import NamePicker from './namePicker'
 
 function App() {
   useEffect(()=>{
@@ -22,8 +23,11 @@ function Room(props) {
     <main className="main">
   
       <header>
-        <img src="/gorrilla.jpg" alt="logo" />
-        <span>Chat App</span>
+        <div>
+          <img src="/gorrilla.jpg" alt="logo" />
+          <span>Chat App</span>
+        </div>
+        <NamePicker />
       </header>
 
       <div className="messages">

@@ -30,6 +30,7 @@ header{
     background:rgba(255,255,255,0.3);
     display:flex;
     align-items:center;
+    justify-content: space-between;
 }
 header img {
     height: 28px;
@@ -90,6 +91,24 @@ header img {
   flex-direction: column-reverse;
 }
 
+.name-picker{
+  margin-right:15px;
+  display:flex;
+  align-items: center;
+}
+.name-picker svg{
+  margin-left:6px;
+  cursor: pointer;
+}
+.name-picker svg:hover{
+  transform:scale(1.2);
+}
+.name-picker input {
+  border-radius:10px;
+  outline:none;
+  border:1px solid white;
+  padding-left:7px;
+}
 
 
 
