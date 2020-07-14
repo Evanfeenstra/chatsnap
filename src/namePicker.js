@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {FiEdit,FiSave} from 'react-icons/fi'
 
-function NamePicker(){
+function NamePicker(props){
   const [name,setName] = useState('')
   const [editing,setEditing] = useState(false)
   return <div className="name-picker">
@@ -11,7 +11,10 @@ function NamePicker(){
         onChange={e=> setName(e.target.value)}
       />
       <FiSave size={20} color="white" 
-        onClick={()=> setEditing(!editing)}
+        onClick={()=> {
+          setEditing(!editing)
+          props.saveName(name)
+        }}
       />
     </>}
 

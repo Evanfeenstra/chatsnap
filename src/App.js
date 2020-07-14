@@ -19,25 +19,28 @@ function App() {
 function Room(props) {
   const room = props.match.params.room
   const {messages, send} = useDatu(room)
+  const [name,setName] = useState('')
   return (
     <main className="main">
   
       <header>
-        <div>
+        <div style={{display:'flex',alignItems:'center'}}>
           <img src="/gorrilla.jpg" alt="logo" />
           <span>Chat App</span>
         </div>
-        <NamePicker />
+        <NamePicker saveName={setName} />
       </header>
 
       <div className="messages">
         {messages.map((m,i)=> {
-          return <Message key={i} text={m.text} />
+          return <Message key={i} text={m.text} 
+            name={m.name} isMe={m.name===name}
+          />
         })}
       </div>
 
       <Footer
-        onSend={text=> send({text, room})} 
+        onSend={text=> send({text, room, name})} 
       />
 
     </main>

@@ -73,6 +73,7 @@ header img {
 
 .msg{
   width:100%;
+  display:flex;
 }
 .msg-bubble{
   color:white;
@@ -82,6 +83,10 @@ header img {
   padding:4px 10px;
   display: inline-block;
   margin:5px;
+}
+.msg-name{
+  font-size: 10px;
+  margin-left: 6px;
 }
 
 .messages{
